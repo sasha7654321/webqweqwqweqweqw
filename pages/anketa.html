@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Анкета опитування клієнта</title>
+    <style>
+        body {
+        background-color: rgb(254, 251, 240);
+        margin: 0px;
+      }
+      main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 16px;
+        font-size: large;
+      }
+      div{
+        padding: 16px;
+        margin: 18px;
+        border-radius: 16px;
+        box-shadow: 0 4px 10px rgba(71, 26, 1, 0.2);
+      }
+      fieldset{
+        padding: 16px;
+        margin: 18px;
+        border-radius: 16px;
+        box-shadow: 0 4px 10px rgba(71, 26, 1, 0.2);
+      }
+      header {
+        background-color: rgb(250, 201, 255);
+        border-bottom-right-radius: 16px;
+        border-bottom-left-radius: 16px;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(71, 26, 1, 0.2);
+      }
+      button[type="submit"]{
+        background-color: rgb(137, 219, 131);
+        margin: 16px;
+        padding: 16px;
+        border-radius: 32px;
+        text-align: left;
+        box-shadow: 0 4px 10px rgba(0, 255, 42, 0.2);
+      }
+      button[type="reset"]{
+        background-color: rgb(215, 94, 94);
+        margin: 16px;
+        padding: 16px;
+        border-radius: 32px;
+        box-shadow: 0 4px 10px rgba(239, 0, 0, 0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Анкета опитування клієнта</h1>
+      <nav>
+        <ul>
+          <li><a href="../index.html">На головну</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h2>Ваша думка важлива для нас</h2>
+
+      <form action="/rate" method="post">
+        <fieldset class="rating-group">
+          <legend>Оцініть наш сервіс (від 1 до 5):</legend>
+          <input type="radio" id="r1" name="rating" value="1" />
+          <label for="r1">1</label>
+          <input type="radio" id="r2" name="rating" value="2" />
+          <label for="r2">2</label>
+          <input type="radio" id="r3" name="rating" value="3" />
+          <label for="r3">3</label>
+          <input type="radio" id="r4" name="rating" value="4" />
+          <label for="r4">4</label>
+          <input type="radio" id="r5" name="rating" value="5"/>
+          <label for="r5">5</label>
+        </fieldset>
+
+        <fieldset class="services-group">
+          <legend>Якими послугами ви скористалися?</legend>
+          <input type="checkbox" id="s1" name="service" value="delivery" required/>
+          <label for="s1">Доставка</label><br>
+          <input type="checkbox" id="s2" name="service" value="consultation" required/>
+          <label for="s2">Консультація</label><br>
+          <input type="checkbox" id="s3" name="service" value="warranty" required/>
+          <label for="s3">Гарантійне обслуговування</label>
+        </fieldset>
+
+        <div>
+          <label for="feedback">Ваш розгорнутий відгук:</label><br>
+          <textarea name="feedback" id="feedback" rows="5"></textarea>
+        </div>
+
+        <section style="text-align: center;">
+          <button type="submit">Надіслати відгук</button>
+          <button type="reset">Очистити форму</button>
+        </section>
+      </form>
+    </main>
+
+  </body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Регістрація студента</title>
+    <style>
+      body {
+        background-color: rgb(254, 251, 240);
+        margin: 0px;
+      }
+      main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 16px;
+        font-size: large;
+      }
+      div{
+        padding: 16px;
+        margin: 18px;
+        border-radius: 16px;
+        box-shadow: 0 4px 10px rgba(71, 26, 1, 0.2);
+      }
+      fieldset{
+        padding: 16px;
+        margin: 18px;
+        border-radius: 16px;
+        box-shadow: 0 4px 10px rgba(71, 26, 1, 0.2);
+      }
+      header {
+        background-color: rgb(250, 201, 255);
+        border-bottom-right-radius: 16px;
+        border-bottom-left-radius: 16px;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(71, 26, 1, 0.2);
+      }
+      button[type="submit"]{
+        background-color: rgb(137, 219, 131);
+        margin: 16px;
+        padding: 16px;
+        border-radius: 32px;
+        text-align: left;
+        box-shadow: 0 4px 10px rgba(0, 255, 42, 0.2);
+      }
+      button[type="reset"]{
+        background-color: rgb(215, 94, 94);
+        margin: 16px;
+        padding: 16px;
+        border-radius: 32px;
+        box-shadow: 0 4px 10px rgba(239, 0, 0, 0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Регістрація для студента</h1>
+      <nav>
+        <ul>
+          <li><a href="../index.html">На головну</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+
+      <h2>Регістрація</h2>
+
+      <form action="/register" method="post">
+        <div>
+          <label for="lastname">Прізвище:</label>
+          <input type="text" id="lastname" name="lastname" required />
+        </div>
+
+        <div>
+          <label for="email">Електронна пошта:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div>
+          <label for="pwd">Пароль(мінімум 5 символів):</label>
+          <input
+            type="password"
+            id="pwd"
+            name="password"
+            minlength="5"
+            required
+          />
+        </div>
+
+        <div>
+          <label for="dob">Дата народження:</label>
+          <input type="date" id="dob" name="dob" />
+        </div>
+
+        <fieldset>
+          <legend>Стать:</legend>
+          <input type="radio" id="gender_m" name="gender" value="male" />
+          <label for="gender_m">Чоловіча</label>
+          <input type="radio" id="gender_f" name="gender" value="female" />
+          <label for="gender_m">Жіноча</label>
+        </fieldset>
+
+        <div>
+          <label for="faculty">Факультет:</label><br>
+          <select name="faculty" id="faculty">
+            <option value="">-Оберіть Факультет-</option>
+            <option value="kn">Компь'ютерні науки</option>
+            <option value="i">Інженерія</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="bio">Додаткова інформація:</label>
+          <textarea name="bio" id="bio" cols="60"></textarea>
+        </div>
+
+        <div>
+          <input type="checkbox" id="terms" name="terms" required />
+          <label for="terms">Я даю згоду на обробку персональних даних</label>
+        </div>
+
+        <section style="text-align: center;">
+          <button type="submit">Підтверження</button>
+          <button type="reset">Очищення</button>
+        </section>
+      </form>
+    </main>
+  </body>
+</html>

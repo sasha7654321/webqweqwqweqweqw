@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Калькулятор кредиту</title>
+    <style>
+        body {
+        background-color: rgb(254, 251, 240);
+        margin: 0px;
+      }
+      main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 16px;
+        font-size: large;
+      }
+      div{
+        padding: 16px;
+        margin: 18px;
+        border-radius: 16px;
+        box-shadow: 0 4px 10px rgba(71, 26, 1, 0.2);
+      }
+      fieldset{
+        padding: 16px;
+        margin: 18px;
+        border-radius: 16px;
+        box-shadow: 0 4px 10px rgba(71, 26, 1, 0.2);
+      }
+      header {
+        background-color: rgb(250, 201, 255);
+        border-bottom-right-radius: 16px;
+        border-bottom-left-radius: 16px;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(71, 26, 1, 0.2);
+      }
+      button[type="submit"]{
+        background-color: rgb(137, 219, 131);
+        margin: 16px;
+        padding: 16px;
+        border-radius: 32px;
+        text-align: left;
+        box-shadow: 0 4px 10px rgba(0, 255, 42, 0.2);
+      }
+      button[type="reset"]{
+        background-color: rgb(215, 94, 94);
+        margin: 16px;
+        padding: 16px;
+        border-radius: 32px;
+        box-shadow: 0 4px 10px rgba(239, 0, 0, 0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Фінансові послуги</h1>
+      <nav>
+        <ul>
+            <li><a href="../index.html">Головна</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h2>Калькулятор кредиту</h2>
+
+      <form action="#" method="get">
+        <div>
+          <label for="amount">Сума кредиту (грн):</label><br>
+          <input type="number" id="amount" name="amount" min="1000" max="500000" step="500" required />
+          <p style="font-size: small; color: gray;">Крок: 500 грн</p>
+        </div>
+
+        <div>
+          <label for="term">Термін кредиту (місяців):</label><br>
+          <input type="range" id="term" name="term" min="1" max="60" value="12" required 
+                 oninput="this.nextElementSibling.value = this.value">
+          <output>12</output>
+        </div>
+
+        <div>
+          <label for="purpose">Цільове призначення:</label><br>
+          <select id="purpose" name="purpose" required>
+            <option value="">-Оберіть ціль-</option>
+            <option value="car">Купівля авто</option>
+            <option value="house">Ремонт житла</option>
+            <option value="education">Оплата навчання</option>
+            <option value="other">Інші потреби</option>
+          </select>
+        </div>
+
+        <section>
+          <button type="submit">Розрахувати</button>
+          <button type="reset">Скинути дані</button>
+        </section>
+      </form>
+    </main>
+  </body>
+</html>
